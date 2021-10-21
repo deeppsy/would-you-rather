@@ -1,25 +1,39 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import { handleInitialData } from "../actions/shared";
+import Spinner from "react-bootstrap/Spinner";
+import LoginPage from "./layer-1/LoginPage";
+import MainApp from "./layer-1/MainApp";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData());
+  }
+  render() {
+    const { authedUser, loadingBar } = this.props;
+    if (loadingBar.default === undefined || loadingBar.default === 1) {
+      return (
+        <div className="d-flex flex-column justify-content-center align-items-center">
+          <Spinner
+            animation="border"
+            role="status"
+            variant="danger"
+            className="my-5"
+          ></Spinner>
+          <span className="sr-only mx-3">Loading...</span>
+        </div>
+      );
+    } else {
+      return <Fragment>{!authedUser ? <LoginPage /> : <MainApp />}</Fragment>;
+    }
+  }
 }
 
-export default App;
+function mapStateToProps({ authedUser, loadingBar }) {
+  return {
+    authedUser,
+    loadingBar,
+  };
+}
+
+export default connect(mapStateToProps)(App);
