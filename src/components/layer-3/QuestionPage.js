@@ -6,9 +6,8 @@ import AnsweredQuestion from "./AnsweredQuestion";
 class QuestionPage extends Component {
   render() {
     const { autherUserAnswers, id } = this.props;
-    console.log(id);
+
     const userHasAnswered = autherUserAnswers.hasOwnProperty(id) ? true : false;
-    console.log(autherUserAnswers);
 
     return (
       <Fragment>

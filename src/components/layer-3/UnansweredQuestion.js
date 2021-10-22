@@ -30,7 +30,6 @@ class UnansweredQuestion extends Component {
   render() {
     const { question, author } = this.props;
 
-    const { toHome } = this.state;
     if (question === null) {
       return <NotFound />;
     }
@@ -54,7 +53,6 @@ class UnansweredQuestion extends Component {
               >
                 {errorMessage && <p className="text-danger">{errorMessage}</p>}
                 <Form.Check
-                  custom
                   type="radio"
                   id="optionOne"
                   label={optionOne.text}
@@ -63,7 +61,6 @@ class UnansweredQuestion extends Component {
                   className="mb-2"
                 />
                 <Form.Check
-                  custom
                   type="radio"
                   id="optionTwo"
                   label={optionTwo.text}

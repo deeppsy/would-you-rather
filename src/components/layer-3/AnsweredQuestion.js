@@ -38,7 +38,7 @@ class AnsweredQuestion extends Component {
             <Card.Body className="d-flex justify-content-center">
               <ul>
                 <li className="py-5 mb-1 px-2 bg-secondary">
-                  <p className="position-relative text-center">
+                  <div className="position-relative text-center">
                     {optionOne.text}
                     {optionOne.votes.includes(authedUser) ? (
                       <div className="position-well">
@@ -63,17 +63,17 @@ class AnsweredQuestion extends Component {
                             cy="31"
                             r="14"
                             stroke="white"
-                            stroke-width="2"
+                            strokeWidth="2"
                           />
                           <path
                             d="M23.0219 32.5892L28.8129 37.8536L41.4025 26.3318"
                             stroke="white"
-                            stroke-width="2"
+                            strokeWidth="2"
                           />
                         </svg>
                       </div>
                     ) : null}
-                  </p>
+                  </div>
                 </li>
                 <ProgressBar
                   now={optionOnePercent}
@@ -84,7 +84,7 @@ class AnsweredQuestion extends Component {
                   chosen by {optionOne.votes.length} out of {totalVotes} users
                 </Card.Text>
                 <li className="py-5 mb-1 px-2 bg-secondary">
-                  <p className="position-relative text-center">
+                  <div className="position-relative text-center">
                     {optionTwo.text}
                     {optionTwo.votes.includes(authedUser) ? (
                       <div className="position-well">
@@ -109,17 +109,17 @@ class AnsweredQuestion extends Component {
                             cy="31"
                             r="14"
                             stroke="white"
-                            stroke-width="2"
+                            strokeWidth="2"
                           />
                           <path
                             d="M23.0219 32.5892L28.8129 37.8536L41.4025 26.3318"
                             stroke="white"
-                            stroke-width="2"
+                            strokeWidth="2"
                           />
                         </svg>
                       </div>
                     ) : null}
-                  </p>
+                  </div>
                 </li>
                 <ProgressBar
                   now={optionTwoPercent}
