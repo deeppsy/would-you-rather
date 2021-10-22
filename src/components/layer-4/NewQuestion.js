@@ -75,6 +75,7 @@ class NewQuestion extends Component {
                       name="text1"
                       onChange={this.handleChange}
                       maxLength={280}
+                      autoComplete="off"
                     />
                   </FloatingLabel>{" "}
                   {textLeft1 <= 100 && (
@@ -93,6 +94,7 @@ class NewQuestion extends Component {
                       name="text2"
                       onChange={this.handleChange}
                       maxLength={280}
+                      autoComplete="off"
                     />
                   </FloatingLabel>
                   {textLeft2 <= 100 && (

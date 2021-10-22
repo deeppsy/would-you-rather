@@ -6,8 +6,8 @@ import Home from "../layer-2/Home";
 import QuestionPage from "../layer-3/QuestionPage";
 import NewQuestion from "../layer-4/NewQuestion";
 
-// import LeaderBoard from "../layer-2/LeaderBoard";
-import NotFound from "../layer-5/NotFound";
+import LeaderBoard from "../layer-5/LeaderBoard";
+// import NotFound from "../layer-5/NotFound";
 
 import Container from "react-bootstrap/Container";
 
@@ -22,8 +22,8 @@ export default class MainApp extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/questions/:question_id" component={QuestionPage} />
               <Route path="/add" component={NewQuestion} />
-              {/*<Route path="/leaderboard" component={LeaderBoard} />
-              <Route component={NotFound} /> */}
+              <Route path="/leaderboard" component={LeaderBoard} />
+              {/*<Route component={NotFound} /> */}
             </Switch>
           </Fragment>
         </Container>
