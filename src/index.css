@@ -46,3 +46,15 @@ ul {
   padding-left: 0 !important;
   list-style-type: none;
 }
+.horizontal-rule {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal-rule:before,
+.horizontal-rule:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 2px solid #000;
+  margin: auto;
+}
