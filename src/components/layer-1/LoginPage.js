@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
 import { setAuthedUser } from "../../actions/authedUser";
@@ -31,24 +31,23 @@ class LoginPage extends Component {
 
   render() {
     const { errorMsg } = this.state;
-
+    console.log(this.props);
     return (
-      <Row className="d-flex flex-column justify-content-center align-items-center min-vh-100">
+      <Row className="d-flex justify-content-center align-items-center min-vh-100">
         <Col xs={12} md={4}>
-          <Card bg="light" className="text-center ">
+          <Card bg="light">
             <Card.Header>Login</Card.Header>
             <Card.Body>
-              <h3 className="text-center text-primary">Please Select a User</h3>
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formGridState">
-                  <Form.Label>Username</Form.Label>
+                  <Form.Label>Usernames</Form.Label>
                   {errorMsg && <p className="text-danger">{errorMsg}</p>}
                   <Form.Control
                     as="select"
                     ref={(id) => (this.userID = id)}
-                    className="form-select"
+                    className="form-select text-primary"
                   >
-                    <option value="">Open this select menu</option>
+                    <option value="">Please Select a User</option>
                     {this.props.userNames.map((username) => (
                       <option key={username.value} value={username.value}>
                         {username.label}
@@ -56,6 +55,7 @@ class LoginPage extends Component {
                     ))}
                   </Form.Control>
                 </Form.Group>
+
                 <br />
                 <Button type="submit" variant="outline-secondary">
                   Submit
@@ -74,6 +74,7 @@ function mapStateToProps({ users }) {
     userNames: Object.keys(users).map((id) => ({
       value: id,
       label: users[id].name,
+      avatarURL: users[id].avatarURL,
     })),
   };
 }

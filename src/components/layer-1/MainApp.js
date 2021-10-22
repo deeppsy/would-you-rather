@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "../layer-2/NavBar";
 import Home from "../layer-2/Home";
 import QuestionPage from "../layer-3/QuestionPage";
-import NewQuestion from "../layer-2/NewQuestion";
+// import NewQuestion from "../layer-2/NewQuestion";
 
-import LeaderBoard from "../layer-2/LeaderBoard";
-import NotFound from "../layer-2/NotFound";
+// import LeaderBoard from "../layer-2/LeaderBoard";
+import NotFound from "../layer-5/NotFound";
 
 import Container from "react-bootstrap/Container";
 
