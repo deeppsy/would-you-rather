@@ -61,4 +61,39 @@ ul {
 
 .full-height {
   height: 100%;
+  position: relative;
+}
+
+.full-height img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.full-height svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #21ba47;
+  color: white;
+}
+
+.underline {
+  background-color: black;
+  width: 100%;
+  height: 3px;
+}
+
+.bolder-fw {
+  font-weight: 800;
 }

@@ -26,7 +26,10 @@ class UserCard extends Component {
       <Fragment>
         <Row className="justify-content-center mb-3">
           <Col md={3}>
-            <Card bg="light" className="full-height">
+            <Card
+              bg="light"
+              className="full-height d-flex justify-content-center align-items-center"
+            >
               <Fragment>
                 {trophyID === 0 && <Gold />}
                 {trophyID === 1 && <Silver />}
@@ -38,16 +41,19 @@ class UserCard extends Component {
           <Col md={6}>
             <Card bg="light" className="full-height">
               <Card.Body>
-                <Card.Title>{username}</Card.Title>
+                <Card.Title className="font-weight-bolder">
+                  {username}
+                </Card.Title>
                 <div>
                   <Stack gap={2} className="mx-auto">
-                    <div>
-                      <p>Answered Questions</p>
-                      <p>{answers}</p>
+                    <div className="d-flex justify-content-between align-items-center border border-secondary p-3">
+                      <p className="mb-0">Answered Questions</p>
+                      <p className="mb-0 bolder-fw">{answers}</p>
                     </div>
-                    <div>
-                      <p>Created Questions</p>
-                      <p>{questionsAsked}</p>
+
+                    <div className="d-flex justify-content-between align-items-center border border-secondary p-3">
+                      <p className="mb-0">Created Questions</p>
+                      <p className="mb-0 bolder-fw">{questionsAsked}</p>
                     </div>
                   </Stack>
                 </div>
@@ -56,10 +62,9 @@ class UserCard extends Component {
           </Col>
           <Col md={3}>
             <Card bg="light" className="full-height">
-              <Card.Body>
-                <Card.Title>Score</Card.Title>
-
-                <div>{total}</div>
+              <Card.Header className="text-center">Score</Card.Header>
+              <Card.Body className="d-flex align-items-center justify-content-center">
+                <div className=" square">{total}</div>
               </Card.Body>
             </Card>
           </Col>
