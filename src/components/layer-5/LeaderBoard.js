@@ -1,17 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { formatDate } from "../../utils/helpers";
-import Avatar from "../layer-2/Avatar";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import ProgressBar from "react-bootstrap/ProgressBar";
-import NotFound from "../layer-5/LeaderBoard";
-
+import UserCard from "./UserCard";
 class LeaderBoard extends Component {
   render() {
-    console.log(this.props.users);
-    return <h1>Hii</h1>;
+    const users = this.props.users;
+
+    return (
+      <Fragment>
+        <h2 className="text-center my-3">LeaderBoards</h2>
+        {users.map((user, idx) => (
+          <UserCard key={user} user={user} trophyID={idx} />
+        ))}
+      </Fragment>
+    );
   }
 }
 
