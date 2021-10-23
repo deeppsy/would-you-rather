@@ -7,7 +7,7 @@ import QuestionPage from "../layer-3/QuestionPage";
 import NewQuestion from "../layer-4/NewQuestion";
 
 import LeaderBoard from "../layer-5/LeaderBoard";
-// import NotFound from "../layer-5/NotFound";
+import NotFound from "../layer-5/NotFound";
 
 import Container from "react-bootstrap/Container";
 
@@ -23,7 +23,7 @@ export default class MainApp extends Component {
               <Route path="/questions/:question_id" component={QuestionPage} />
               <Route path="/add" component={NewQuestion} />
               <Route path="/leaderboard" component={LeaderBoard} />
-              {/*<Route component={NotFound} /> */}
+              <Route component={NotFound} />
             </Switch>
           </Fragment>
         </Container>
